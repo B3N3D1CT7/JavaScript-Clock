@@ -1,0 +1,221 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "poppins", sans-serif;
+}
+
+html {
+  font-style: 1em;
+}
+
+body {
+  min-height: 100vh;
+  background: rgba(200, 200, 200, 0.8);
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+header {
+  height: 4rem;
+  width: 100%;
+  padding: 0 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #A58854;
+  border-bottom: 1px solid #383E8F;
+  animation: close 3s linear 1;
+}
+
+@keyframes close {
+  0% {
+    padding: 0;
+  }
+  100% {
+    padding: 0 1rem;
+  }
+}
+
+header .logo {
+  height: 100%;
+  width: 70%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.8rem;
+}
+
+.logo .logo-icon {
+  font-size: 1.7rem;
+  font-weight: 600;
+  color: #383E8F;
+}
+
+.logo .branding {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #383E8F;
+}
+
+header .menu {
+  height: 100%;
+  width: 30%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.menu .menu-bar {
+  color: #383E8F;
+  font-size: 1.1rem;
+  transition: 0.8s ease;
+}
+
+.menu-bar.active {
+  transform: rotate(180deg);
+}
+
+#clock {
+  margin-top: 2rem;
+  padding: 0.8rem;
+  height: 22rem;
+  width: 100%;
+}
+
+#clock .analog-clock {
+  height: 100%;
+  width: 100%;
+  border: 3px solid #383E8F;
+  border-radius: 50%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.analog-clock .hand {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-100%, -50%);
+  transform-origin: left;
+  height: 0.4rem;
+  width: 50%;
+  background: #383E8F;
+  transform: rotate(90deg);
+  transition: 0.5s ease;
+}
+
+.analog-clock .hand.hour-hand {
+  width: 30%;
+}
+
+.analog-clock .hand.secs-hand {
+  height: 0.2rem;
+}
+
+#clock .digital-clock {
+  margin-top: 2rem;
+  padding: 1rem;
+  text-align: center;
+  display: none;
+}
+
+.digital-clock p {
+  font-size: 3rem;
+  color: #383E8F;
+}
+
+.change-clock {
+  margin: 2rem 0;
+  padding: 1rem;
+  text-align: center;
+}
+
+.change-clock button {
+  border: none;
+  width: 6.5rem;
+  padding: 0.4rem 0;
+  background: #383E8F;
+  color: #eee;
+  border-radius: 0.4rem;
+}
+
+.change-clock i {
+  margin-left: 0.2rem;
+  transition: 0.5s ease;
+}
+
+#clock .display-date {
+  margin-top: 1rem;
+  padding: 1rem;
+  text-align: center;
+  font-size: 1.5rem;
+  color: #383E8F;
+}
+
+nav {
+  position: absolute;
+  left: -100%;
+  top: 0;
+  height: 100vh;
+  width: 60%;
+  background: #383E8F;
+  color: #fff;
+  transform-origin: left;
+  transition: 1s ease;
+  z-index: 1;
+  overflow-y: scroll;
+}
+
+nav .navbar {
+  height: 100%;
+  width: 100%;
+  padding: 2rem;
+}
+
+.dark {
+  font-size: 1.7rem;
+}
+
+.navbar p {
+  margin-top: 2rem;
+  padding: 0.5rem;
+  border-radius: 3px;
+  transition: 0.5s ease;
+}
+
+.panel {
+  margin-top: 1rem;
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: 1s ease;
+}
+
+.panel a {
+  display: block;
+  text-decoration: none;
+  margin: 0.5rem 0;
+  color: #eee;
+  border: 1px solid #eee;
+  padding: 0.3rem;
+  border-radius: 5px;
+}
+
+.panel a i {
+  margin-left: 5px;
+}
+
+.navbar p.show {
+  border: 1px solid #ccc;
+}
+
+.panel.active {
+  transform: scaleY(1);
+}
