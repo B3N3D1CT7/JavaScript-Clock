@@ -12,10 +12,10 @@ html {
 }
 
 body {
-  min-height: 100vh;
+  height: 100vh;
   background: rgba(200, 200, 200, 0.8);
   overflow-y: scroll;
-  overflow-x: hidden;
+  overflow-x: scroll;
 }
 
 ::-webkit-scrollbar {
@@ -45,7 +45,7 @@ header {
 
 header .logo {
   height: 100%;
-  width: 70%;
+  width: 30%;
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -84,9 +84,10 @@ header .menu {
 
 #clock {
   margin-top: 2rem;
+  margin: auto;
   padding: 0.8rem;
   height: 22rem;
-  width: 100%;
+  width: 22rem;
 }
 
 #clock .analog-clock {
@@ -107,9 +108,68 @@ header .menu {
   transform-origin: left;
   height: 0.4rem;
   width: 50%;
-  background: #383E8F;
+  background: #222;
   transform: rotate(90deg);
+  border-top-left-radius: 0.2rem;
+  border-top-right-radius: 0.2rem;
   transition: 0.5s ease;
+}
+.analog-clock .hand::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translate(-50%, -50%);
+  height: 0.9rem;
+  width: 0.9rem;
+  background: #222;
+  border-radius: 50%;
+  z-index: 999;
+}
+.analog-clock .number {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-align: center;
+}
+.one {
+  transform: rotate(30deg);
+}
+.two {
+  transform: rotate(60deg);
+}
+.three {
+  transform: rotate(90deg);
+}
+.four {
+  transform: rotate(120deg);
+}
+.five {
+  transform: rotate(150deg);
+}
+.six {
+  transform: rotate(180deg);
+}
+.seven {
+  transform: rotate(210deg);
+}
+.eight {
+  transform: rotate(240deg);
+}
+.nine {
+  transform: rotate(270deg);
+}
+.ten {
+  transform: rotate(300deg);
+}
+.eleven {
+  transform: rotate(330deg);
+}
+.twelve {
+  transform: rotate(360deg);
 }
 
 .analog-clock .hand.hour-hand {
@@ -118,6 +178,7 @@ header .menu {
 
 .analog-clock .hand.secs-hand {
   height: 0.2rem;
+  background: crimson;
 }
 
 #clock .digital-clock {
@@ -129,7 +190,7 @@ header .menu {
 
 .digital-clock p {
   font-size: 3rem;
-  color: #383E8F;
+  color: #111;
 }
 
 .change-clock {
@@ -157,7 +218,7 @@ header .menu {
   padding: 1rem;
   text-align: center;
   font-size: 1.5rem;
-  color: #383E8F;
+  color: #111;
 }
 
 nav {
