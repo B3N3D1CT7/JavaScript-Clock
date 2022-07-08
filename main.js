@@ -22,7 +22,7 @@ let date = new Date();
 function setDate() {
   date = new Date();
   const seconds = date.getSeconds();
-  const secDegree = (seconds/60)* (360+270);
+  const secDegree = (seconds/60)* 360+270;
   secsHand.style.transform = `rotate(${secDegree}deg)`;
   
   const minutes = date.getMinutes();
